@@ -11,14 +11,16 @@
 |
 */
 
+Route::resource('/projects', 'PagesController');
 
-Route::get('/', 'PagesController@home');
+Route::post('/projects/{project}/task', 'PagesTasksController@store');
+Route::patch('/tasks/{task}', 'PagesTasksController@update');
 
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
+/*
+Route::get('/projects', 'PagesController@index');
+Route::get('/projects/create', 'PagesController@create');
+Route::get('/projects/{project}', 'PagesController@show');
+Route::post('/projects', 'PagesController@store');
+Route::get('/projects/{project}/edit', 'PagesController@edit');
+Route::patch('/projects/{project}', 'PagesController@update');
+Route::delete('/projects/{project}', 'PagesController@destroy');*/
